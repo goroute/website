@@ -23,7 +23,7 @@ pygmentsUseClasses = true
   homepage_button_link = '/guide'
   homepage_button_text = 'Get Started'
   homepage_intro = 'Whisper is a documentation theme built with Hugo. The design and functionality is intentionally minimal.'
-  homepage_image = '/images/terminal.gif'
+  homepage_image = '/images/terminal.png'
   mainSections = ['guide']
 
   [params.homepage_meta_tags]
