@@ -14,16 +14,17 @@ pygmentsUseClasses = true
     weight = 1
 
 [[menu.main]]
-    name = "Docs"
-    url = "/docs/"
+    name = "Guide"
+    url = "/guide/"
     weight = 2
 
 [params]
   google_analytics_id=""
-  homepage_button_link = '/docs'
-  homepage_button_text = 'Read The Docs'
+  homepage_button_link = '/guide'
+  homepage_button_text = 'Get Started'
   homepage_intro = 'Whisper is a documentation theme built with Hugo. The design and functionality is intentionally minimal.'
   homepage_image = '/images/terminal.gif'
+  mainSections = ['guide']
 
   [params.homepage_meta_tags]
     meta_description = "Hugo Whisper is a documentation theme built with Hugo."
