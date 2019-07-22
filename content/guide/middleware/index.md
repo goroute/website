@@ -48,17 +48,15 @@ func main() {
 
 To add our own middleware we just need to create a new func which returns `route.MiddlewareFunc`. 
 
-Let's create a new middleware which logs each request path.
+Let's create a new middleware which logs each request's path.
 
 ```go
 import "github.com/goroute/route"
 
 func logger() route.MiddlewareFunc {
-	return func(next route.HandlerFunc) route.HandlerFunc {
-		return func(c route.Context) error {
-			fmt.Println("Request Path:", c.Request().URL.Path)
-			return next(c)
-		}
+	return func(c route.Context, next route.HandlerFunc) error {
+		fmt.Println("Request Path:", c.Request().URL.Path)
+		return next(c)
 	}
 }
 ```
@@ -112,16 +110,14 @@ func New(options ...Option) route.MiddlewareFunc {
 		opt(&opts)
 	}
 
-	return func(next route.HandlerFunc) route.HandlerFunc {
-		return func(c route.Context) error {
-			if opts.Skipper(c) {
-				return next(c)
-			}
-			if opts.Level == "debug" {
-				fmt.Println("Request Path:", c.Request().URL.Path)
-			}
+	return func(c route.Context, next route.HandlerFunc) error {
+		if opts.Skipper(c) {
 			return next(c)
 		}
+		if opts.Level == "debug" {
+			fmt.Println("Request Path:", c.Request().URL.Path)
+		}
+		return next(c)
 	}
 }
 ```
