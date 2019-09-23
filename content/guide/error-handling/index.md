@@ -11,7 +11,7 @@ Each route handler requires this signature:
 HandlerFunc func(Context) error
 ```
 
-Which allows to directly return error:
+Which allows to directly return error from handler:
 ```go
 mux.GET("/user/:id", func(c Context) error {
     id := c.Param("id")
@@ -24,6 +24,3 @@ mux.GET("/user/:id", func(c Context) error {
     return c.NoContent(http.StatusOk)
 })
 ```
-
-# TODO
-...

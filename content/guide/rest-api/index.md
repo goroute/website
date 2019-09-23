@@ -4,7 +4,9 @@ date: 2019-02-11T19:27:37+10:00
 weight: 6
 ---
 
-Full example could be found [here](https://github.com/goroute/examples/tree/master/rest).
+Goroute has a good support for building restful apis.
+
+Full example could be found [here](https://github.com/goroute/examples/tree/master/cmd/rest).
 
 ```go
 package main
